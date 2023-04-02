@@ -47,6 +47,10 @@ class Input(TextLog):
 
             #     self.text = self.text[:self.i - 2] + self.text[self.i - 1:]
 
+        if event.key == "delete":
+            if self.i < len(self.text):
+                self.text = self.text[:self.i-1] + self.text[self.i:]
+
         if event.key == "enter":
             self.text = self.text[:self.i - 1] + " \n" + self.text[self.i - 1:]
             self.i += 2
