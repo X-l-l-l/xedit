@@ -108,10 +108,11 @@ class MainApp(App):
                 ("escape", "exit", "Exit")]
     textBox = None
 
+    textBox = Input(getText())
+
     def compose(self) -> ComposeResult:
         yield Header()
         yield Footer()
-        self.textBox = Input(getText())
         yield self.textBox
 
     def action_save(self):
